@@ -306,10 +306,10 @@ class PrintingMarks(inkex.EffectExtension):
         offset_bottom = bbox.bottom - margin_bottom - 10
         mark_size = 5
         top_right_mark = [
-                (border_right - mark_size, border_top),  # Start at top-right inner edge
-                (border_right - mark_size, border_top + mark_size),             # Horizontal line outward
-                (border_right, border_top + mark_size)  # Vertical line downward
-            ]
+            (border_right - mark_size, border_top),  # Start at top-right inner edge
+            (border_right - mark_size, border_top + mark_size),             # Horizontal line outward
+            (border_right, border_top + mark_size)  # Vertical line downward
+        ]
 
         top_left_mark = [
             (border_left + mark_size, border_top),  # Start at top-left inner edge
@@ -334,15 +334,15 @@ class PrintingMarks(inkex.EffectExtension):
             (border_left + mark_size, border_bottom - mark_size)
         ]
         
-        width = round(offset_right - margin_left, 0)
-        height = round(offset_bottom - margin_top, 0)
-        dx = margin_left
-        dy = margin_bottom
+        width = round(offset_right - margin_left - (mark_size * 2), 0)
+        height = round(offset_bottom - margin_top - (mark_size * 2), 0)
+        dx = margin_left + (mark_size * 2)
+        dy = margin_bottom  + (mark_size * 2)
 
-        cutting_area_x = offset_left + 5
-        cutting_area_y = offset_top + 5
-        cutting_area_width = width - 20
-        cutting_area_heignt = height - 20
+        cutting_area_x = offset_left + mark_size
+        cutting_area_y = offset_top + mark_size
+        cutting_area_width = width - (mark_size * 4)
+        cutting_area_heignt = height - (mark_size * 4)
     
 
         if True:
