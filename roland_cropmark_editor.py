@@ -341,8 +341,8 @@ class PrintingMarks(inkex.EffectExtension):
 
         cutting_area_x = offset_left + mark_size
         cutting_area_y = offset_top + mark_size
-        cutting_area_width = width - (mark_size * 4)
-        cutting_area_heignt = height - (mark_size * 4)
+        cutting_area_width = width - (mark_size * 2)
+        cutting_area_heignt = height - (mark_size * 2)
     
 
         if True:
